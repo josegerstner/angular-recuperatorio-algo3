@@ -1,0 +1,7 @@
+<div class="card" ng-controller="EditarContactoCtrl as contactoCtrl">
+  <h1>Nuevo Contacto</h1>
+  <strong>Nombre :</strong><input type="text" name="nombre" ng-model="contactoCtrl.ContactosSrv.contactoSeleccionado.names" required>
+  <strong>Teléfono :</strong><input type="text" name="telefono" ng-model="contactoCtrl.ContactosSrv.contactoSeleccionado.phone" required>
+  <strong>Email :</strong><input type="email" name="correo" ng-model="contactoCtrl.ContactosSrv.contactoSeleccionado.email" required></br>
+  <button type="button" class="btn btn-primary" ui-sref="contactos">Volver</button>
+</div>

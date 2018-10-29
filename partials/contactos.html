@@ -1,0 +1,29 @@
+<div class="card" ng-controller="ContactosCtrl as contactoCtrl">
+  <h1>Lista de Contactos</h1>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th><strong>Nombre y Apellido</strong></th>
+        <th><strong>Favorito</strong></th>
+        <th><strong>Editar</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="contacto in contactoCtrl.ContactosSrv.contactos">
+        <td> {{contacto.names}} </td>
+        <td><button type="button" class="btn btn-default" ng-click="contacto.setFavorito()">{{contacto.favorito}}</button></td>
+        <td><button type="button" class="btn btn-default" ui-sref="editarContacto" ng-click="contactoCtrl.ContactosSrv.editarContacto(contacto)">Editar</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card">
+    <h1>Nuevo Contacto</h1>
+    <strong>Nombre :</strong><input type="text" name="nombre" ng-model="contactoCtrl.ContactosSrv.newName" required>
+    <strong>Teléfono :</strong><input type="text" name="telefono" ng-model="contactoCtrl.ContactosSrv.newPhone" required>
+    <strong>Email :</strong><input type="email" name="correo" ng-model="contactoCtrl.ContactosSrv.newEmail" required></br>
+    <button type="button" class="btn btn-primary" ng-click="contactoCtrl.ContactosSrv.agregarContacto()">Agregar Contacto</button>
+  </div>
+
+  <!--<button type="button" class="btn btn-primary" ui-sref="editarContacto">Editar Contacto</button>-->
+</div>
